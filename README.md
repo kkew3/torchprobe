@@ -6,6 +6,7 @@
 	import torch.nn as nn
 	class ConvNet(nn.Module):
 	    def __init__(self):
+	        nn.Module.__init__(self)
 	        self.features = nn.Sequential(
 	            nn.Conv2d(3, 64, 3, padding=1),
 	            nn.Conv2d(64, 256, 3),
@@ -27,6 +28,7 @@ This repository aims to solve this problem. The author thought up this method an
 	from inst import instrumented_sequential as instseq
 	class ConvNet(nn.Module):
 	    def __init__(self):
+	        nn.Module.__init__(self)
 	        self.features = instseq(nn.Sequential)(
 	            nn.Conv2d(3, 64, 3, padding=1),
 	            SizeProbe('conv1', echo=True),
