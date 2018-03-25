@@ -73,5 +73,14 @@ where
 
 ## Extension
 
-The implementation of `SizeProbe` gives an example application of this probing framework. The end users are expected to write more probe modules that suit their needs.
+The implementation of `SizeProbe` gives an example application of this probing framework. Besides `SizeProbe`, there's also a demo subclass `NormProbe` in `demo/demo.py`. The end users are expected to write more probe modules that suit their needs. The users are also encouraged to improve the super class `ProbeModule`.
 
+## Prerequisites
+
+This library should be adaptable to both Python 2.7+ and Python 3. However, for Python 2.7+, the `future` package should have been installed, so that `from __future__ import print_function` won't raise an error.
+
+To run the demo (`demo/demo.py`), one will need [tadm](https://pypi.python.org/pypi/tqdm).
+
+## Limitations
+
+Currently the probe module only supports injecting codes to `nn.Sequential`, and the class decorator `inst.instrumented_sequential` and `inst.uninstrumented_sequential` do not support recursive code injection. The author considered it trivial to inspect the intermediate values outside `nn.Sequential`. It would be appreciated if one would make this utility more comprehensively covers PyTorch modules.
