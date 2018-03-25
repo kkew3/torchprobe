@@ -68,7 +68,7 @@ Then at Python console:
 where
 
 - `#1` shows the inspection of the sizes of the intermediate values
-- `#2` shows the injected probe modules does not affect `load_state_dict` and `torch.save(net.state_dict())` functions
+- `#2` shows the injected probe modules does not affect `load_state_dict` and `torch.save(net.state_dict(), 'filename')` functions
 - `#3` shows the internal structure of the instrumented `ConvNet`, where the probe modules are injected
 
 ## Extension
