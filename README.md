@@ -79,7 +79,7 @@ The implementation of `SizeProbe` gives an example application of this probing f
 
 This library should be adaptable to both Python 2.7+ and Python 3. However, for Python 2.7+, the `future` package should have been installed, so that `from __future__ import print_function` won't raise an error.
 
-To run the demo (`demo/demo.py`), one will need [tadm](https://pypi.python.org/pypi/tqdm).
+To run the demo (`demo/demo.py`), one will need [tqdm](https://pypi.python.org/pypi/tqdm).
 
 ## Limitations
 
