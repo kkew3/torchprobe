@@ -14,7 +14,7 @@ class ProbeModule(nn.Module):
         self.key = key
 
     def forward(self, x):
-        self.do_proeb(x)
+        self.do_probe(x)
         return x
     
     def do_probe(self, x):
