@@ -11,6 +11,9 @@ class ProbeModule(nn.Module):
         :param key: the unique name of the probe
         """
         nn.Module.__init__(self)
+        if '.' in key:
+            raise ValueError('`.` must not appear in key ("{}")'
+                             .format(key))
         self.key = key
 
     def forward(self, x):
