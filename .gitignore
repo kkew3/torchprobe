@@ -1,4 +1,9 @@
 __pycache__/
+
+# the virtualenv, with pytorch 0.3.1
+rt/
+
+# temp files
 *.pyc
 *.swp
 *.sav
