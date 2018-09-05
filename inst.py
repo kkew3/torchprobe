@@ -1,5 +1,5 @@
 import torch.nn as nn
-import probe
+from . import probe
 
 
 def instrumented_sequential(cls):
