@@ -5,7 +5,7 @@ import probe
 def instrumented_sequential(cls):
     """
     Enable the probe modules injected in an `nn.Sequential` module.
-    
+
     :param cls: the class to decorate, should be a subclass of `nn.Sequential`
     """
     class InstrumentedSequential(nn.Sequential):
@@ -22,7 +22,7 @@ def instrumented_sequential(cls):
                     if name in [x for x, _ in self.named_modules()]:
                         raise ValueError('probe key name "{}" already exists'
                                 .format(m.key))
-                    self.add_module('__probe_{}'.format(m.key), m)
+                    self.add_module(name, m)
         def forward(self, *args, **kwargs):
             return nn.Sequential.forward(self, *args, **kwargs)
     return InstrumentedSequential
@@ -31,7 +31,7 @@ def instrumented_sequential(cls):
 def uninstrumented_sequential(cls):
     """
     Disable the probe modules injected in an `nn.Sequential` module.
-    
+
     :param cls: the class to decorate, should be a subclass of `nn.Sequential`
     """
     class UninstrumentedSequential(nn.Sequential):
